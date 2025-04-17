@@ -26,8 +26,8 @@ void kernel_syr2k(int N, int M,
   int i, j, k;
 
   for (i = 0; i < N; i++) {
-    for (k = 0; k < M; k++) {
-      for (j = 0; j < N; j++) {
+    for (j = 0; j < N; j++) {
+      for (k = 0; k < M; k++) {
         C[i][j] += A[j][k] * B[i][k] + B[j][k] * A[i][k];
       }
     }
