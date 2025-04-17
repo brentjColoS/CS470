@@ -16,7 +16,21 @@ void kernel_syr2k(int N, int M,
   int ti, tj, tk;
   int i, j, k;
 
-  //TO DO: Implement SI, SJ and SK
+  for (ti = 0; ti < N; ti += SI) {
+    for (tk = 0; tk < M; tk += SK) {
+      for (tj = 0; tj < N; tj += SJ) {
+  
+        for (i = ti; i < min(ti + SI, N); i++) {
+          for (k = tk; k < min(tk + SK, M); k++) {
+            for (j = tj; j < min(tj + SJ, N); j++) {
+              C[i][j] += A[j][k] * B[i][k] + B[j][k] * A[i][k];
+            }
+          }
+        }
+  
+      }
+    }
+  }  
 }
 
 
