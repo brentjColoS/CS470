@@ -1,4 +1,4 @@
-OBJS := syr2k syr2k-perm
+OBJS := syr2k syr2k-perm syr2k-ptiled
 
 all: $(OBJS)
 
@@ -7,6 +7,9 @@ syr2k: syr2k.c
 
 syr2k-perm: syr2k-perm.c
 	gcc -O3 -o $@ $<
+
+syr2k-ptiled: syr2k-ptiled.c
+	gcc -03 -o $@ $<
 
 clean:
 	rm -rf $(OBJS)
