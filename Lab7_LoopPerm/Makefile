@@ -1,4 +1,4 @@
-OBJS := syr2k
+OBJS := syr2k syr2k-perm
 
 all: $(OBJS)
 
